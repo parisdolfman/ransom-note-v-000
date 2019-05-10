@@ -1,26 +1,18 @@
-
-function binaryMatch(magazine) {
-  let result = []
-  array = magazine.sort();
-  for (let i = 0; i < array.length; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[i] == array[j]) {
-        // only add to result array once
-        }
-      }
-    }
+function buildHistogram(array) {
+    let histogram = {};
+    array.map(x => (
+      histogram[x] = histogram[x] ? histogram[x] + 1 : 1
+    ));
+    return histogram;
   }
-}
 
-function getFrequency(array) {
-  var frequency = {};
-  for (let i = 0; i < array.length; i++) {
-    var character = array.charAt(i);
-    if (frequency[character]) {
-      frequency[character]++;
-    } else {
-      frequency[character] = 1;
-    }
-  }
-  return frequency
+function canBuildNote(magazine, note) {
+ let histogram = buildHistogram(magazine);
+ for(let i = 0; i < note.length; i++) {
+   let letter = note.charAt(i);
+   if (histogram[letter] && histogram[letter] > 0) {
+     histogram[letter]--;
+   } else return false;
+ }
+ return true;
 }
