@@ -33,3 +33,16 @@ function canBuildNote(mag, note){
 
     return true
 }
+
+function canBuildNote (magazine, note) {
+    let hist = buildHistogram(magazine)
+    for (let char of note) {
+      if (!hist[char]) {
+        return false
+      } else {
+        hist[char] = hist[char] - 1
+      }
+    }
+      return true 
+  }
+  
