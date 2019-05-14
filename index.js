@@ -6,11 +6,10 @@ function buildHistogram(mag){
     for (let el of mag){
       //console.log(hash)
       if(!hash[el]){ //if value of key('a') doesnt exist
-        hash[el] = 1  //set key to value of 1 
+        hash[el] = 1  //set key to value of 1
       }else{
         hash[el] += 1
       }
     }
     return hash
 }
-
