@@ -13,3 +13,23 @@ function buildHistogram(mag){
     }
     return hash
 }
+
+function canBuildNote(mag, note){
+    let hist = buildHistogram(mag) //this will give us the hash of letter in mag and its frequency
+
+    //false if letter doesnt exist in histogram
+    // false if letter in histogram doesn't have enough of the same letter
+    //otherwise true
+
+    //if letter in note is found or included in histogram
+    
+    for (let el of note){
+        if(hist[el] > 0){
+            hist[el] -= 1
+        }else{
+            return false
+        }
+    }
+
+    return true
+}
