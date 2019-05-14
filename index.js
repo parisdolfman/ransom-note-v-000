@@ -1,10 +1,10 @@
-function binaryMatch(mag_array) {
+function binaryMatch(magazine) {
   let histogramArray = [];
-  const histogram = buildHistogram(mag_array);
+  const histogram = buildHistogram(magazine);
 
-  for (letter in histogram) {
+  for (x in histogram) {
     letterObj = {};
-    letterObj[letter] = histogram[letter];
+    letterObj[x] = histogram[x];
     histogramArray.push(letterObj);
   }
   return histogramArray;
@@ -12,8 +12,8 @@ function binaryMatch(mag_array) {
 
 function buildHistogram(array) {
   let histogram = {};
-  array.forEach(letter => {
-    histogram[letter] = histogram[letter] ? histogram[letter] += 1 : 1;
-  });
+  array.map(y => (
+    histogram[y] = histogram[y] ? histogram[y] += 1 : 1
+  ));
   return histogram
 }
