@@ -1,24 +1,16 @@
-function buildHistogram(magazine) {
-  let histogram = {};
+function buildHistogram(mag){
+    //key value pair where key = letter in magazine and value is frequency of letter
 
-  for (let letter of magazine) {
-    if (!magazine[letter]) {
-      magazine[letter] = 1
-    } else {
-      magazine[letter] += 1
+    let hash = {}
+
+    for (let el of mag){
+      //console.log(hash)
+      if(!hash[el]){ //if value of key('a') doesnt exist
+        hash[el] = 1  //set key to value of 1 
+      }else{
+        hash[el] += 1
+      }
     }
-  }
-  return histogram;
+    return hash
 }
 
-function canBuildNote(magazine, note) {
-  let histogram = buildHistogram(magazine)
-  for (let letter of note) {
-    if (histogram[letter] > 0) {
-      histogram[letter] -= 1
-    } else {
-      return false
-    }
-  }
-  return true
-}
