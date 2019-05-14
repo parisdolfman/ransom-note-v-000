@@ -22,7 +22,7 @@ function canBuildNote(mag, note){
     //otherwise true
 
     //if letter in note is found or included in histogram
-    
+
     for (let el of note){
         if(hist[el] > 0){
             hist[el] -= 1
