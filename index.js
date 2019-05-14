@@ -43,6 +43,5 @@ function canBuildNote (magazine, note) {
         hist[char] = hist[char] - 1
       }
     }
-      return true 
+      return true
   }
-  
