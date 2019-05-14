@@ -17,3 +17,15 @@ function buildHistogram(array) {
   ));
   return histogram
 }
+
+function canBuildNote(magazine, note) {
+  let histogram = buildHistogram(magazine)
+  for (let x of note) {
+    if (!histogram[x]) {
+      return false
+    } else {
+      histogram[x] = histogram[x] - 1
+    }
+  }
+  return true
+}
